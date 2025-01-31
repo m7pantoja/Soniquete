@@ -12,12 +12,37 @@ if (isset($_GET['id'])) {
     $article = $result->fetch_assoc();
 
     if ($article) {
+        echo "<!DOCTYPE html>";
+        echo "<html lang='es'>";
+        echo "<head>";
+        echo "<meta charset='UTF-8'>";
+        echo "<meta name='viewport' content='width=device-width, initial-scale=1.0'>";
+        echo "<title>". $article['title'] ."</title>";
+        echo "<link rel='stylesheet' href='assets/css/header.css'>"; 
         echo "<link rel='stylesheet' href='assets/css/article.css'>"; 
+        echo "<link rel='stylesheet' href='assets/css/footer.css'>"; 
+        echo "</head>";
+
+        echo "<body>";
+
+        echo "<header>";
+        echo "<h1>Soniquete</h1>";
+        echo "<nav>";
+        echo "<ul>";
+        echo "<li><a href='index.html'>Home</a></li>";
+        echo "<li><a href='articles.php'>Articles</a></li>";
+        echo "<li><a href='artists.php'>Artists</a></li>";
+        echo "<li><a href='aboutus.html'>About Us</a></li>";    
+        echo "</ul>";
+        echo "</nav>";
+        echo "</header>";
+
         echo "<div class='article-container'>";
         echo "<h1>" . $article['title'] . "</h1>";
         echo "<img src='" . $article['img'] . "' alt='" . $article['title'] . "'>";
-        echo "<p>" . $article['content'] . "</p>";
-        echo "<a href='articles.php' class='back-button'>← Volver a Articulos</a>";
+        echo $article['content'];
+        echo "<span class='author'>" . $article['author'] . "</span>";
+        echo "<a href='articles.php' class='back-button'>← Back to Articles</a>";
 
         if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['name']) && isset($_POST['comment'])) {
             $name = $_POST['name'];
@@ -32,12 +57,7 @@ if (isset($_GET['id'])) {
         }
 
         echo "<div class='comment-section'>";
-        echo "<h2>Comentarios</h2>";
-        echo "<form action='article.php?id=$id' method='POST'>";
-        echo "<input type='text' name='name' placeholder='Tu nombre' required>";
-        echo "<textarea name='comment' placeholder='Escribe tu comentario...' required></textarea>";
-        echo "<button type='submit'>Enviar</button>";
-        echo "</form>";
+        echo "<h2>Comments</h2>";
 
         $commentQuery = "SELECT name, comment, created_at FROM comments WHERE article_id = ? ORDER BY created_at DESC";
         $stmt = $conn->prepare($commentQuery);
@@ -55,12 +75,26 @@ if (isset($_GET['id'])) {
         }
         echo "</div>";
 
+        echo "<form action='article.php?id=$id' method='POST'>";
+        echo "<input type='text' name='name' placeholder='Your name' required>";
+        echo "<textarea name='comment' placeholder='Write your comment...' required></textarea>";
+        echo "<button type='submit'>Send</button>";
+        echo "</form>";
+
         echo "</div>";
         echo "</div>"; 
+
     } else {
-        echo "<p>Artículo no encontrado.</p>";
+        echo "<p>Article not found.</p>";
     }
-} else {
-    echo "<p>Solicitud inválida.</p>";
-}
+    } else {
+    echo "<p>Invalid application.</p>";
+    }
+
+    echo "<footer>";
+    echo "<p>&copy; 2025 Soniquete Digital Magazine. All Rights Reserved.</p>";
+    echo "</footer>";
+
+    echo "</body>";
+    echo "</html>";
 ?>
