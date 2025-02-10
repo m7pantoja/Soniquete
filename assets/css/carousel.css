@@ -1,15 +1,16 @@
 .carousel {
     width: 100%;
-    max-width: 900px;
+    max-width: 1000px;
     margin: auto;
     overflow: hidden;
     position: relative;
     text-align: center;
+    border-radius: 12px;
 }
 
 .carousel-container {
     width: 100%;
-    max-width: 900px;
+    max-width: 1000px;
     overflow: hidden;
     position: relative;
 }
@@ -26,11 +27,26 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 .carousel-item img {
     max-width: 100%;
     height: auto;
     object-fit: cover;
-    border-radius: 8px;
+    border-radius: 12px;
+}
+
+.carousel-title {
+    position: absolute;
+    bottom: 0; 
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 10px;
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+    font-style: italic;
 }

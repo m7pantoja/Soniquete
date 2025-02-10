@@ -1,0 +1,67 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+
+  .artist-container {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: auto; 
+  }
+
+  .artist-image {
+    float: left;
+    width: 280px;
+    margin-right: 20px;
+  }
+
+  .artist-image img {
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  .artist-info {
+    text-align: left;
+  }
+
+  .artist-info h1 {
+    font-size: 28px;
+    color: #b22222;
+    margin-bottom: 10px;
+  }
+
+  .artist-info p {
+    font-family: 'Lora','Arial',sans-serif;
+    font-size: 18px;
+    line-height: 1.2;
+    color: #333;
+    text-align: justify;
+  }
+
+  .back-button {
+    font-weight: bold;
+    display: block;
+    width: fit-content;
+    margin: 30px auto;
+    padding: 10px 20px;
+    background: #b22222;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+.back-button:hover {
+    background: #8b0000;
+}

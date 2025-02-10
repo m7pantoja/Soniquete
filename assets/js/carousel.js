@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    fetch("index.php") 
+    fetch("includes/get_articles.php") 
         .then(response => response.json())
         .then(articles => {
             if (articles.length > 0) {
@@ -20,7 +20,13 @@ document.addEventListener("DOMContentLoaded", function () {
                     img.style.height = "400px";
                     img.style.objectFit = "cover";
 
+                    let titleOverlay = document.createElement("div");
+                    titleOverlay.classList.add("carousel-title");
+                    titleOverlay.innerText = article.title;
+
                     slideItem.appendChild(img);
+                    slideItem.appendChild(titleOverlay);
+
                     carouselSlide.appendChild(slideItem);
                 });
 

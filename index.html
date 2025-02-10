@@ -4,17 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Soniquete</title>
+    <title>Home | Soniquete</title>
  
     <link rel="stylesheet" href="assets/css/home.css">
     <link rel="stylesheet" href="assets/css/header.css">
     <link rel="stylesheet" href="assets/css/footer.css">
     <link rel="stylesheet" href="assets/css/carousel.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css2?family=Lora:wght@400;600&display=swap' rel='stylesheet'>
+
+    <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
 
 </head>
 
 <body>
-
+    
     <header>
         <h1>Soniquete</h1>
         <nav>
@@ -28,21 +32,59 @@
     </header>
 
     <main>
+        
+        <div class="quote-container">
+            <p id="quote-text" class="quote-text"></p>
+            <p id="quote-author" class="quote-author"></p>
+        </div>
+
+        <h2>New Articles</h2>
 
         <section class="carousel">
             <div class="carousel-container">
                 <div class="carousel-slide"></div>
             </div>
         </section>
+
+        <a href='articles.php' class='button'>See All Articles</a>
+
+        <h2>Featured Artists</h2>
+
+        <div class="artists-container">
+            <div class="artists-grid" id="artistsGrid">
+            </div>
+        </div>
     
+        <a href='artists.php' class='button'>See All Artists</a>
+
+        <h2>About Us</h2>
+
+        <div class="about-container">
+            <p>
+                Welcome to <strong>Soniquete</strong>, the digital magazine dedicated to the world of <em>Flamenco</em>.
+                My mission is to bring the magic of Flamenco music, history, and culture to the world.
+                At Soniquete, I share articles and artist reviews about Flamenco music.
+                I also allow users to comment on the articles to give their opinion.
+                Whether you are a lifelong Flamenco lover or just discovering its beauty, Soniquete is the place for you!
+            </p>
+            <p>
+                My name is <strong>Mario Pantoja Castro</strong>. I'm a spanish student who is doing an Erasmus mobility for one year in Gdansk, Poland. This is a project for the course <em>Website Development Technologies</em>, from the Politechnika University of Gdansk.
+                I developed and coded the entire project, which is open-source. 
+            </p>
+            <p>
+                You can check out all the code on GiHutb: <a href="https://github.com/m7pantoja/soniquete" target="_blank">Soniquete on GitHub</a>.
+            </p>
+        </div>
+
     </main>
     
     <footer>
         <p>&copy; 2025 Soniquete Digital Magazine. All Rights Reserved.</p>
     </footer>
 
+    <script src="assets/js/quotes.js"></script>
     <script src="assets/js/carousel.js"></script>
+    <script src="assets/js/featured_artists.js"></script>
 
 </body>
-
 </html>

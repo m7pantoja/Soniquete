@@ -1,0 +1,42 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.about-container {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.about-container h1 {
+    font-size: 32px;
+    color: #b22222;
+    margin-bottom: 20px;
+}
+
+.about-container p {
+    font-family: 'Lora','Arial',sans-serif;
+    font-size: 18px;
+    line-height: 1.2;
+    color: #333;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+.about-container a {
+    color: #b22222;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.about-container a:hover {
+    color: #8b0000; 
+}

@@ -1,18 +1,31 @@
 <?php
 include 'includes/config.php';
 
-$query = "SELECT * FROM articles ORDER BY created_at DESC";
-$result = mysqli_query($conn, $query);
+if (!isset($_GET['id']) || empty($_GET['id'])) {
+    die("<p>Invalid request.</p>");
+}
+
+$id = $_GET['id'];
+$query = "SELECT * FROM artists WHERE id = ?";
+$stmt = $conn->prepare($query);
+$stmt->bind_param("i", $id);
+$stmt->execute();
+$result = $stmt->get_result();
+$artist = $result->fetch_assoc();
+
+if (!$artist) {
+    die("<p>Artist not found.</p>");
+}
 ?>
 
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Articles | Soniquete</title>
+    <title><?= htmlspecialchars($artist['name']) ?> | Soniquete</title>
     <link rel="stylesheet" href="assets/css/header.css">
-    <link rel="stylesheet" href="assets/css/articles.css">
+    <link rel="stylesheet" href="assets/css/artist.css">
     <link rel="stylesheet" href="assets/css/footer.css">
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
@@ -31,22 +44,15 @@ $result = mysqli_query($conn, $query);
         </nav>
     </header>
 
-    <div class="articles-container">
-        <h1>Articles</h1>
-        <div class="articles-grid">
-            <?php
-            while ($row = mysqli_fetch_assoc($result)) {
-                echo "<div class='article'>";
-                echo "<img src='" . $row['img'] . "' alt='" . $row['title'] . "'>";
-                echo "<div class='article-content'>";
-                echo "<h2><a href='article.php?id=" . $row['id'] . "'>" . $row['title'] . "</a></h2>";
-                echo "<p>" . substr($row['content'], 0, 120) . "...</p>";
-                echo "<a href='article.php?id=" . $row['id'] . "' class='read-more'>Read more</a>";
-                echo "</div>";
-                echo "</div>";
-            }
-            ?>
+    <div class="artist-container">
+        <div class="artist-image">
+            <img src="<?= htmlspecialchars($artist['image']) ?>" alt="<?= htmlspecialchars($artist['name']) ?>">
         </div>
+        <div class="artist-info">
+            <h1><?= htmlspecialchars($artist['name']) ?></h1>
+            <?= $artist['description'] ?>
+        </div>
+        <a href="artists.php" class="back-button">← Back to Artists</a>
     </div>
 
     <footer>

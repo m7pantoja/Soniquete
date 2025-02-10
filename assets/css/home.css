@@ -1,18 +1,29 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
     margin: 0;
     padding: 0;
-    background-color: white;
 }
 
 main {
-    max-width: 900px;
+    max-width: 1000px;
     margin: 20px auto;
     padding: 20px;
     background-color: white;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
 }
+
+h2 {
+    text-align: center;
+    font-size: 30px;
+    color: #b22222;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+/* ARTICLES SECTION */
 
 .featured-articles {
     text-align: center;
@@ -35,4 +46,125 @@ article {
 article img {
     width: 100%;
     border-radius: 8px;
+}
+
+/* QUOTES SECTION */
+
+.quote-container {
+    max-width: 1000px;
+    margin: 10px 10px 20px 10px;
+    padding: 10px;
+    background: #fff;
+    border-left: 5px solid #b22222; 
+    text-align: center;
+    font-style: italic;
+
+}
+
+.quote-text {
+    font-family: 'Montserrat','Arial',sans-serif;
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.quote-author {
+    font-size: 18px;
+    color: #b22222;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* BUTTON */
+
+.button {
+    display: block;
+    width: fit-content;
+    margin: 20px 0 20px auto;
+    padding: 10px 20px;
+    background: #b22222;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 16px;
+    transition: background 0.3s;
+    font-weight: bold;
+}
+
+.button:hover {
+    background: #8b0000;
+}
+
+/* ARTISTS SECTION */
+
+.artists-container {
+    max-width: 1000px;
+}
+
+.artists-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 20px;
+}
+
+.artist-card {
+    position: relative;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.artist-card:hover {
+    transform: translateY(-5px);
+}
+
+.artist-card img {
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    object-fit: cover;
+    display: block;
+}
+
+.artist-card h2 {
+    font-style: italic;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6); 
+    color: white;
+    font-size: 18px;
+    padding: 10px 0;
+    margin: 0;
+    text-align: center;
+}
+
+/* ABOUT US SECTION */
+
+.about-container {
+    max-width: 1000px;
+    padding: 0px 20px 20px 20px;
+    text-align: center;
+}
+
+.about-container p {
+    font-family: 'Lora','Arial',sans-serif;
+    font-size: 18px;
+    line-height: 1.2;
+    color: #333;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+.about-container a {
+    color: #b22222;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.about-container a:hover {
+    color: #8b0000; 
 }

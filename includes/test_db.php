@@ -6,4 +6,4 @@ if ($conn) {
 } else {
     echo "Database connection failed!";
 }
-?>
+
