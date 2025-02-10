@@ -13,9 +13,10 @@ My name is Mario Pantoja Castro. I'm a spanish student who is doing an Erasmus m
 
 ### Set up
 In order to render the web page I have used the **Apache** server and **MySQL** for managing the database. 
-Specifically, I have installed **XAMPP** distribution to use both, Apache and MySQL. 
-Other ways can be used to render this project. The only thing you must do is generating the database using
-the `soniquete.sql` file. For this, MySQL is recommended. Notice that in the `inludes/config.php` file I have 
+Specifically, I have installed **XAMPP** distribution to use both, Apache and MySQL. I have always rendered the
+page locally. Other ways can be used to render this project. The only thing you must do is generating the database using
+the `soniquete.sql` file. For this, MySQL is recommended. I have obtained the `soniquete.sql` file automatically using the *phpMyAdmin* software
+that XAMPP distribution provides. Notice that in the `inludes/config.php` file I have 
 used the user `root` and that no `pass` is specified. This should be modified depending on each user.
 For the rest, the web page should work properly using a HTTP Server like Apache.
 
